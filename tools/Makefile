@@ -27,3 +27,9 @@ clean_and_generate: clean_client generate_client
 .PHONY: install_generator
 install_generator: 
 	go get -u github.com/rigetti/openapi-cli-generator
+
+.PHONY: generate_cli_specs
+generate_cli_specs: 
+	cp ../openapi/atlas-api.yaml ../openapi/atlas-api-revision.yaml
+	git checkout head~2 -- ../openapi/atlas-api.yaml
+	oasdiff --base ../openapi/atlas-api.yaml --revision ../openapi/atlas-api-revision.yaml

@@ -22,4 +22,18 @@ doc = applyAllOfTransformations(doc);
 doc = applyModelNameTransformations(doc, "ApiAtlas", "View");
 doc = applyDigestTransformations(doc);
 
+
+// CLI generator
+
+// Generate CLI per path. 
+// This transformation does filter entire api to single path
+const paths = Object.keys(doc.paths).filter(path => path == "/api/atlas/v2/groups/{groupId}/limits");
+console.warn("path", paths);
+
+doc.paths = paths.reduce((obj, key) => {
+    obj[key] = doc[key];
+    return obj;
+  }, {});;
+
+
 saveAPI(doc, apiFileLocation);
