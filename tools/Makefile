@@ -22,3 +22,8 @@ generate_client:
 
 .PHONY: clean_and_generate
 clean_and_generate: clean_client generate_client
+
+
+.PHONY: install_generator
+install_generator: 
+	go get -u github.com/rigetti/openapi-cli-generator
