@@ -1,0 +1,28 @@
+name: Release
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  release-npm:
+    name: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.3.0
+          registry-url: "https://registry.npmjs.org"
+      - run: yarn install
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v4
+      - name: Update versions of packages
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "noreply@github.com"
+          npm version $GITHUB_REF_SLUG 
+      - name: Publish packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
