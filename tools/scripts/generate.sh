@@ -24,14 +24,3 @@ cp "$OPENAPI_FOLDER/$OPENAPI_FILE_NAME" "$openapiFileLocation"
 
 npm install
 npm run sdk:transform -- "$openapiFileLocation"
-
-# echo "# Running OpenAPI generator validation"
-# npm exec openapi-generator-cli -- validate -i "$openapiFileLocation"
-
-echo "# Running Client Generation"
-
-npm exec openapi-generator-cli -- generate \
-    -c "./config/config.yaml" -i "$openapiFileLocation" -o "$SDK_FOLDER" \
-    --package-name="$client_package" \
-    --ignore-file-override=config/.gen-ignore
-
