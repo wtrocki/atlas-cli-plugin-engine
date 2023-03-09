@@ -1,4 +1,4 @@
-#  Atlas Client for typescript
+#  Atlas CLI plugin generator
 
 > NOTE: This project is just an experiment. It should not be used by general public.
 
