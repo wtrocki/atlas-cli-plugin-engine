@@ -26,14 +26,10 @@ doc = applyDigestTransformations(doc);
 // CLI generator
 
 // Generate CLI per path. 
-// This transformation does filter entire api to single path
-const paths = Object.keys(doc.paths).filter(path => path == "/api/atlas/v2/groups/{groupId}/limits");
-console.warn("path", paths);
+const cliSamplePath = "/api/atlas/v2/orgs";
+const value = doc.paths[cliSamplePath]
+doc.paths = {"/api/atlas/v2/orgs": value}
 
-doc.paths = paths.reduce((obj, key) => {
-    obj[key] = doc[key];
-    return obj;
-  }, {});;
-
+docs.paths["/api/atlas/v2/orgs"].paramters
 
 saveAPI(doc, apiFileLocation);

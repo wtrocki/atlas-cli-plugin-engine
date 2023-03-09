@@ -20,3 +20,4 @@ cp "$OPENAPI_FOLDER/$OPENAPI_FILE_NAME" "$openapiFileLocation"
 
 npm install
 npm run sdk:transform -- "$openapiFileLocation"
+

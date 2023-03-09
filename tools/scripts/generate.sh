@@ -26,3 +26,4 @@ npm install
 npm run sdk:transform -- "$openapiFileLocation"
 
 openapi-cli-generator generate $openapiFileLocation
+mv ./atlas-api-transformed.go ../cmd/orgs/generated.go 
