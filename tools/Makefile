@@ -31,7 +31,10 @@ install_generator:
 .PHONY: generate_cli_diff
 generate_cli_diff: 
 	cp ../openapi/atlas-api.yaml ../openapi/atlas-api-revision.yaml
-	git checkout head~2 -- ../openapi/atlas-api.yaml
-	oasdiff --base ../openapi/atlas-api.yaml --revision ../openapi/atlas-api-revision.yaml
+	git checkout HEAD^ -- ../openapi/atlas-api.yaml
+	oasdiff --exclude-endpoints --format=json --base ../openapi/atlas-api.yaml \
+		 --revision ../openapi/atlas-api-revision.yaml > ../openapi/openapi.diff 
+	cat ../openapi/openapi.diff | jq '.paths.modified | keys'
+	
 
 
