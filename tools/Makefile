@@ -34,7 +34,7 @@ generate_cli_diff:
 	git checkout HEAD^ -- ../openapi/atlas-api.yaml
 	oasdiff --exclude-endpoints --format=json --base ../openapi/atlas-api.yaml \
 		 --revision ../openapi/atlas-api-revision.yaml > ../openapi/openapi.diff 
-	cat ../openapi/openapi.diff | jq '.paths.modified | keys'
+	cat ../openapi/openapi.diff | jq '.paths.modified | keys' > ../openapi/command.diff
 	
 
 

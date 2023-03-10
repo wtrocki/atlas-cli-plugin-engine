@@ -1,0 +1,286 @@
+{
+  "paths": {
+    "modified": {
+      "/api/atlas/v2/groups/{groupId}/customDBRoles/roles": {
+        "operations": {
+          "modified": {
+            "GET": {
+              "responses": {
+                "modified": {
+                  "200": {
+                    "content": {
+                      "mediaTypeModified": {
+                        "application/vnd.atlas.2023-01-01+json": {
+                          "schema": {
+                            "items": {
+                              "properties": {
+                                "modified": {
+                                  "roleName": {
+                                    "description": {
+                                      "from": "Human-readable label that identifies the role for the request. This name must be unique for this custom role in this project.",
+                                      "to": ""
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "POST": {
+              "requestBody": {
+                "content": {
+                  "mediaTypeModified": {
+                    "application/vnd.atlas.2023-01-01+json": {
+                      "schema": {
+                        "properties": {
+                          "modified": {
+                            "roleName": {
+                              "description": {
+                                "from": "Human-readable label that identifies the role for the request. This name must be unique for this custom role in this project.",
+                                "to": ""
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "modified": {
+                  "202": {
+                    "content": {
+                      "mediaTypeModified": {
+                        "application/vnd.atlas.2023-01-01+json": {
+                          "schema": {
+                            "properties": {
+                              "modified": {
+                                "roleName": {
+                                  "description": {
+                                    "from": "Human-readable label that identifies the role for the request. This name must be unique for this custom role in this project.",
+                                    "to": ""
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/atlas/v2/groups/{groupId}/customDBRoles/roles/{roleName}": {
+        "operations": {
+          "modified": {
+            "GET": {
+              "responses": {
+                "modified": {
+                  "200": {
+                    "content": {
+                      "mediaTypeModified": {
+                        "application/vnd.atlas.2023-01-01+json": {
+                          "schema": {
+                            "properties": {
+                              "modified": {
+                                "roleName": {
+                                  "description": {
+                                    "from": "Human-readable label that identifies the role for the request. This name must be unique for this custom role in this project.",
+                                    "to": ""
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "PATCH": {
+              "responses": {
+                "modified": {
+                  "200": {
+                    "content": {
+                      "mediaTypeModified": {
+                        "application/vnd.atlas.2023-01-01+json": {
+                          "schema": {
+                            "properties": {
+                              "modified": {
+                                "roleName": {
+                                  "description": {
+                                    "from": "Human-readable label that identifies the role for the request. This name must be unique for this custom role in this project.",
+                                    "to": ""
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/atlas/v2/orgs": {
+        "operations": {
+          "modified": {
+            "POST": {
+              "requestBody": {
+                "content": {
+                  "mediaTypeModified": {
+                    "application/vnd.atlas.2023-01-01+json": {
+                      "schema": {
+                        "properties": {
+                          "modified": {
+                            "name": {
+                              "description": {
+                                "from": "Human-readable label that identifies the organization.",
+                                "to": ""
+                              },
+                              "minLength": {
+                                "from": 1,
+                                "to": 0
+                              },
+                              "maxLength": {
+                                "from": 64,
+                                "to": null
+                              }
+                            },
+                            "orgOwnerId": {
+                              "description": {
+                                "from": "Unique 24-hexadecimal digit string that identifies the Atlas user that you want to assign the Organization Owner role. This user must be a member of the same organization as the calling API key. This is required if you call the Admin API endpoint directly, but not required when you call through the Atlas CLI.",
+                                "to": ""
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "modified": {
+                  "201": {
+                    "content": {
+                      "mediaTypeModified": {
+                        "application/vnd.atlas.2023-01-01+json": {
+                          "schema": {
+                            "properties": {
+                              "modified": {
+                                "orgOwnerId": {
+                                  "description": {
+                                    "from": "Unique 24-hexadecimal digit string that identifies the Atlas user that you want to assign the Organization Owner role.",
+                                    "to": ""
+                                  },
+                                  "example": {
+                                    "from": "32b6e34b3d91647abb20e7b8",
+                                    "to": null
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "modified": {
+        "ApiAtlasCreateOrganizationRequestView": {
+          "properties": {
+            "modified": {
+              "name": {
+                "description": {
+                  "from": "Human-readable label that identifies the organization.",
+                  "to": ""
+                },
+                "minLength": {
+                  "from": 1,
+                  "to": 0
+                },
+                "maxLength": {
+                  "from": 64,
+                  "to": null
+                }
+              },
+              "orgOwnerId": {
+                "description": {
+                  "from": "Unique 24-hexadecimal digit string that identifies the Atlas user that you want to assign the Organization Owner role. This user must be a member of the same organization as the calling API key. This is required if you call the Admin API endpoint directly, but not required when you call through the Atlas CLI.",
+                  "to": ""
+                }
+              }
+            }
+          }
+        },
+        "ApiAtlasCreateOrganizationResponseView": {
+          "properties": {
+            "modified": {
+              "orgOwnerId": {
+                "description": {
+                  "from": "Unique 24-hexadecimal digit string that identifies the Atlas user that you want to assign the Organization Owner role.",
+                  "to": ""
+                },
+                "example": {
+                  "from": "32b6e34b3d91647abb20e7b8",
+                  "to": null
+                }
+              }
+            }
+          }
+        },
+        "ApiAtlasCustomDBRoleView": {
+          "properties": {
+            "modified": {
+              "roleName": {
+                "description": {
+                  "from": "Human-readable label that identifies the role for the request. This name must be unique for this custom role in this project.",
+                  "to": ""
+                }
+              }
+            }
+          }
+        },
+        "ApiAtlasCustomZoneMappingsView": {
+          "properties": {
+            "modified": {
+              "customZoneMappings": {
+                "description": {
+                  "from": "List that contains comma-separated key value pairs to map zones to geographic regions. These pairs map an ISO 3166-1a2 location code, with an ISO 3166-2 subdivision code when possible, to the human-readable label for the desired custom zone. MongoDB Cloud maps the ISO 3166-1a2 code to the nearest geographical zone by default. Include this parameter to override the default mappings.\n\nThis parameter returns an empty object if no custom zones exist.",
+                  "to": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
